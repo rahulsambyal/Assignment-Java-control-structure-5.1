@@ -1,0 +1,91 @@
+abstract class Figure {
+	double dim1;
+	abstract void findArea();
+	abstract void findPerimeter();
+}
+public class Circle extends Figure{
+	int i;
+	
+	public Circle(){
+	Scanner scan= new Scanner(System.in);
+	System.out.println("enter the radius");
+	int i= scan.nextInt();
+	this.i=i;
+	}
+	
+	public void findArea(){
+	float k= (22*i*i)/7;
+	System.out.println("Area of Circle is :"+ k);
+	}
+	
+	public void findPerimeter(){
+		System.out.println("The Perimeter of circle is :"+ (2*i*22/7));
+	}
+}
+public class Rectangle extends Figure{
+	int i,j;
+	
+	public Rectangle(){
+	Scanner scan= new Scanner(System.in);
+	System.out.println("enter the breadth");
+	int i= scan.nextInt();
+	this.i=i;
+	Scanner scan2= new Scanner(System.in);
+	System.out.println("enter the length");
+	int j= scan2.nextInt();
+	this.j=j;
+	}
+	
+	public void findArea(){
+		System.out.println("The area of rectangle is :"+(i*j));
+	}
+	
+	public void findPerimeter(){
+		System.out.println("The Perimeter of Rectabgle is :"+ (2*(i+j)));
+		
+		
+	}
+}
+public class Triangle extends Figure{
+	int i,j,z;
+	
+	public Triangle(){
+	Scanner scan= new Scanner(System.in);
+	System.out.println("enter the Base");
+	int i= scan.nextInt();
+	this.i=i;
+	Scanner scan2= new Scanner(System.in);
+	System.out.println("enter the Height");
+	int j= scan2.nextInt();
+	this.j=j;
+	Scanner scan3= new Scanner(System.in);
+	System.out.println("enter the Height");
+	int z= scan3.nextInt();
+	this.z=z;
+	}
+	
+	public void findArea(){
+		System.out.println("The area of triangle is :"+ (0.5*i*j));
+		
+	}
+	public void findPerimeter(){
+		System.out.println("The area of triangle is :"+ (i+j+z));
+		
+	}
+}
+public class Main {
+	public static void main(String[] args)
+	{
+		Circle a= new Circle();
+		a.findArea();
+		a.findPerimeter();
+		
+		Rectangle r= new Rectangle();
+		r.findArea();
+		r.findPerimeter();
+		
+		Triangle t= new Triangle();
+		t.findArea();
+		t.findPerimeter();
+	}
+}
